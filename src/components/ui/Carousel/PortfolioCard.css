@@ -1,0 +1,380 @@
+.portfolio-card {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  color: white;
+
+  background: #111;
+}
+
+/* --------------------------------
+   Image
+-------------------------------- */
+
+.portfolio-card-media {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.portfolio-card-media img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  user-select: none;
+  pointer-events: none;
+
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide.position-3:hover
+.portfolio-card-media img {
+  transform: scale(1.03);
+}
+
+/* --------------------------------
+   Overlay
+-------------------------------- */
+
+.portfolio-card-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 1rem;
+
+  box-sizing: border-box;
+}
+
+/* --------------------------------
+   Top
+-------------------------------- */
+
+.portfolio-card-top {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 0.5rem;
+}
+
+.portfolio-card-icon {
+  width: 2rem;
+  height: 2rem;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(20, 20, 20, 0.45);
+
+  color: white;
+
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  font-size: 1rem;
+}
+
+.portfolio-card-icon:hover {
+  background: rgba(20, 20, 20, 0.7);
+}
+
+.portfolio-card-price {
+  padding: 0.35rem 0.8rem;
+
+  border-radius: 999px;
+
+  background: rgba(20, 20, 20, 0.45);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 0.75rem;
+}
+
+/* --------------------------------
+   Bottom
+-------------------------------- */
+
+.portfolio-card-bottom {
+  position: relative;
+
+  margin: 0 -1rem -1rem;
+
+  padding: 3rem 1rem 1rem;
+
+  min-height: 25%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    transparent
+  );
+}
+
+.portfolio-card-info {
+  min-width: 0;
+}
+
+.portfolio-card-category {
+  display: block;
+
+  margin-bottom: 0.25rem;
+
+  font-size: 0.7rem;
+
+  opacity: 0.75;
+}
+
+.portfolio-card-info h3 {
+  margin: 0;
+
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.portfolio-card-info p {
+  max-height: 0;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  font-size: 0.75rem;
+  line-height: 1.4;
+
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease,
+    margin 0.3s ease;
+}
+
+.portfolio-card-bottom.expanded p {
+  max-height: 6rem;
+
+  margin-top: 0.5rem;
+
+  opacity: 0.8;
+}
+
+/* --------------------------------
+   Toggle
+-------------------------------- */
+
+.portfolio-card-toggle {
+  flex: 0 0 auto;
+
+  width: 2rem;
+  height: 2rem;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card-bottom.expanded
+.portfolio-card-toggle {
+  transform: rotate(180deg);
+}
+
+/* --------------------------------
+   Hide controls on side cards
+-------------------------------- */
+
+.carousel-slide:not(.position-3)
+.portfolio-card-top,
+.carousel-slide:not(.position-3)
+.portfolio-card-bottom {
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.carousel-slide.position-3
+.portfolio-card-top,
+.carousel-slide.position-3
+.portfolio-card-bottom {
+  opacity: 1;
+
+  transition: opacity 0.3s ease;
+}
+
+/* ================================
+   Portfolio Card Media
+================================ */
+
+.portfolio-card-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+  cursor: pointer;
+}
+
+.portfolio-card-media img,
+.portfolio-card-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ================================
+   Video Controls
+================================ */
+
+.portfolio-card-icon,
+.portfolio-card-play {
+  position: relative;
+  z-index: 10;
+}
+
+
+/* Center play / pause button */
+.position-3 .portfolio-card-play{
+  display: flex;
+}
+.portfolio-card-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 56px;
+  height: 56px;
+
+  border: none;
+  border-radius: 50%;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/*
+ * Show the play button when hovering
+ * over the card.
+ */
+.portfolio-card:hover .portfolio-card-play {
+  opacity: 1;
+}
+
+
+/*
+ * Keep paused state visible.
+ *
+ * This is useful because if the user pauses
+ * the video, they should still see the play
+ * button.
+ */
+.portfolio-card-play.paused {
+  opacity: 1;
+}
+
+
+/*
+ * Small hover animation.
+ */
+.portfolio-card-play:hover {
+  background: rgba(0, 0, 0, 0.5);
+
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+
+/* ================================
+   Mute Button
+================================ */
+
+.portfolio-card-icon {
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.portfolio-card-icon:hover {
+  background: rgba(0, 0, 0, 0.55);
+  transform: scale(1.05);
+}

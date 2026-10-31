@@ -38,6 +38,8 @@ export function GridPlanning() {
                     <img
                       src={item.src}
                       alt={item.alt}
+                      width={item.width}
+                      height={item.height}
                       loading="lazy"
                       decoding="async"
                       className="media-img w-full"
@@ -66,6 +68,8 @@ export function GridPlanning() {
                     <img
                       src={item.src}
                       alt={item.alt}
+                      width={item.width}
+                      height={item.height}
                       loading="lazy"
                       decoding="async"
                       className="media-img w-full"
@@ -94,6 +98,8 @@ export function GridPlanning() {
                     <img
                       src={item.src}
                       alt={item.alt}
+                      width={item.width}
+                      height={item.height}
                       loading="lazy"
                       decoding="async"
                       className="media-img w-full"

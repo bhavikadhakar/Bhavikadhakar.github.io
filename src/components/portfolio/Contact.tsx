@@ -13,12 +13,12 @@ export function Contact() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_100%_at_20%_50%,transparent_0%,color-mix(in_oklab,var(--wine-deep)_74%,transparent)_100%)]"
       />
 
-      <Reveal className="relative mx-auto flex w-full max-w-[1200px] items-baseline justify-between">
-        <p className="label text-ivory/60 text-[10px]">07 / Contact</p>
+      <Reveal className="relative mx-auto flex w-full max-w-300 items-baseline justify-between">
+        <p className="label text-ivory/60 text-[10px]">08 / Contact</p>
         <p className="label text-ivory/40 hidden text-[10px] md:block">Available for projects</p>
       </Reveal>
 
-      <div className="relative mx-auto w-full max-w-[1200px] py-20 md:py-24">
+      <div className="relative mx-auto w-full max-w-300 py-20 md:py-24">
         <Reveal as="h2" className="display text-ivory text-[15vw] leading-[0.88] md:text-[11vw]">
           Let's
           <br />
@@ -26,7 +26,7 @@ export function Contact() {
         </Reveal>
       </div>
 
-      <div className="relative mx-auto grid w-full max-w-[1200px] gap-10 md:grid-cols-12 md:items-end">
+      <div className="relative mx-auto grid w-full max-w-300 gap-10 md:grid-cols-12 md:items-end">
         <Reveal delay={120} className="md:col-span-5 md:col-start-8">
           <h3 className="label text-ivory/50 text-[10px]">Contact</h3>
           <ul className="border-ivory/15 mt-6 border-t">

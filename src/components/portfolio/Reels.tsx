@@ -54,7 +54,7 @@ function ReelCard({ item, i, onOpen }: { item: MediaItem; i: number; onOpen: () 
 export function Reels() {
   const lightbox = useLightbox();
 
-  const transformReelsToProjects:MediaItem[] =  projects.map((reel) => ({
+  const transformReelsToProjects: any =  projects.map((reel) => ({
       src: reel.url,
       video: reel.type === "Video" ? reel.url : "",
       alt: reel.title,

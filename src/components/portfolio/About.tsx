@@ -11,8 +11,8 @@ export function About() {
 
         <div className="mt-16 grid gap-10 md:mt-24 md:grid-cols-12">
           <Reveal delay={160} className="md:col-span-4">
-            <p className="label text-muted-foreground text-[10px]">Three years of practice</p>
-            <p className="font-serif mt-6 text-2xl leading-snug md:text-[1.75rem]">
+            {/* <p className="label text-muted-foreground text-[10px]">Three years of practice</p> */}
+            <p className="font-serif mt-0 text-2xl leading-snug md:text-[1.75rem]">
               Content built on audience behaviour, not guesswork.
             </p>
           </Reveal>
@@ -21,7 +21,7 @@ export function About() {
             <Reveal delay={240}>
               <p className="text-[1.0625rem] leading-[1.85] md:text-xl md:leading-[1.8]">
                 I am a Content Strategist and {" "}
-                <strong className="font-semibold">Social Media Manager</strong>, with 2.5+ years of experience building and growing brands. 
+                <strong className="font-semibold">Social Media Manager</strong>, with years of experience building and growing brands. 
                 I have worked with a variety of brands across different niches, including hospitality, luxury villas, fashion apparel, skincare, 
                 artifacts store, and schools, etc. managing their end-to-end social media pages.
               </p>

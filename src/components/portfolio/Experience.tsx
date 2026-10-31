@@ -18,10 +18,15 @@ export function Experience() {
               delay={160 + i * 90}
               className="border-border/70 grid items-center gap-8 border-t py-14 md:grid-cols-12 md:py-20"
             >
-              <span className="label text-muted-foreground text-[10px] md:col-span-2">
-                0{i + 1}
-              </span>
-              <div className="md:col-span-5 place-content-center">
+              <div className="flex justify-between items-center flex-row">
+                <span className="label text-muted-foreground text-[10px] md:col-span-2">
+                  0{i + 1}
+                </span>
+                <span className="font-serif text-xl md:text-right md:text-3xl block md:hidden w-fit">
+                  {item.period}
+                </span>
+              </div>
+              <div className="md:col-span-5 place-content-center flex justify-center">
                 <img
                   src={item.logo}
                   alt={`${item.company} logo`}
@@ -30,30 +35,30 @@ export function Experience() {
                   className="h-20 w-auto max-w-55 object-contain object-left md:h-24 mix-blend-multiply"
                 />
               </div>
-              <p className="font-serif text-xl tracking-wide md:col-span-5 md:text-right md:text-3xl">
+              <p className="font-serif text-xl tracking-wide md:col-span-5 md:text-right md:text-3xl md:block hidden">
                 {item.period}
               </p>
             </Reveal>
           ))}
         </div>
 
-         <SectionHeading index="03" eyebrow="Brands" note="Industry">
+        <SectionHeading index="03" eyebrow="Brands" note="Industry">
           Brands I Have Worked With
         </SectionHeading>
 
         <LogoLoop
-        className="mt-16"
-        logos={logo}
-        speed={100}
-        direction="left"
-        logoHeight={100}
-        gap={60}
-        hoverSpeed={0}
-        scaleOnHover
-        fadeOut
-        fadeOutColor="#ffffff00"
-        ariaLabel="Technology partners"
-      />
+          className="mt-16"
+          logos={logo}
+          speed={100}
+          direction="left"
+          logoHeight={100}
+          gap={60}
+          hoverSpeed={0}
+          scaleOnHover
+          fadeOut
+          fadeOutColor="#ffffff00"
+          ariaLabel="Technology partners"
+        />
       </div>
     </section>
   );

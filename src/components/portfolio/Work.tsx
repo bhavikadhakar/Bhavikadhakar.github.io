@@ -17,10 +17,11 @@ import { WorkCarouselCard } from "../ui/Carousel/WorkCarouselCard";
 export function Work() {
   const plugin = React.useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const lightbox = useLightbox();
-const transformPostsToProjects: MediaItem[] =  workCarousel.flat().map((reel) => ({
+const transformPostsToProjects: any =  workCarousel.flat().map((reel) => ({
       src: reel.url,
       video: reel.type === "Video" ? reel.url : "",
       alt: reel.title,
+      desc: reel?.description,
     }));
 
   return (
@@ -30,10 +31,10 @@ const transformPostsToProjects: MediaItem[] =  workCarousel.flat().map((reel) =>
           My work
         </SectionHeading>
         <div className="mt-6">Focused on creative direction, content planning, and copywriting. Every post and carousel is built on a clear concept and messaging structure designed to align with brand identity and drive audience engagement. </div>
-        <div className="mt-16 flex flex-wrap gap-20">
+        <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-14 sm:gap-x-8 md:grid-cols-4 md:gap-8 lg:gap-20">
           <Carousel
             plugins={[plugin.current]}
-            className="w-1/5 max-w-1/5 sm:max-w-xs"
+            className="mx-auto w-full max-w-xs"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
@@ -50,12 +51,12 @@ const transformPostsToProjects: MediaItem[] =  workCarousel.flat().map((reel) =>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="hidden lg:flex" />
+            <CarouselNext className="hidden lg:flex" />
           </Carousel>
           <Carousel
             plugins={[plugin.current]}
-            className="w-1/5 max-w-1/5 sm:max-w-xs"
+            className="mx-auto w-full max-w-xs"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
@@ -72,12 +73,12 @@ const transformPostsToProjects: MediaItem[] =  workCarousel.flat().map((reel) =>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="hidden lg:flex" />
+            <CarouselNext className="hidden lg:flex" />
           </Carousel>
           <Carousel
             plugins={[plugin.current]}
-            className="w-1/5 max-w-1/5 sm:max-w-xs"
+            className="mx-auto w-full max-w-xs"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
@@ -94,12 +95,12 @@ const transformPostsToProjects: MediaItem[] =  workCarousel.flat().map((reel) =>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="hidden lg:flex" />
+            <CarouselNext className="hidden lg:flex" />
           </Carousel>
           <Carousel
             plugins={[plugin.current]}
-            className="w-1/5 max-w-1/5 sm:max-w-xs"
+            className="mx-auto w-full max-w-xs"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
@@ -116,8 +117,8 @@ const transformPostsToProjects: MediaItem[] =  workCarousel.flat().map((reel) =>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="hidden lg:flex" />
+            <CarouselNext className="hidden lg:flex" />
           </Carousel>
         </div>
         <div className="mt-16 relative h-full">

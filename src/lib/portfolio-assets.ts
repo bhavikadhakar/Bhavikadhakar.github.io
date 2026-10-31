@@ -96,6 +96,8 @@ export type MediaItem = {
   src: string;
   alt: string;
   height?: number;
+  /** Intrinsic pixel width — paired with height, reserves layout space for lazy-loaded <img> tags so they don't shift content (and break in-page anchor scrolling) while loading. */
+  width?: number;
   /** Optional Video source — reel cards play it when present. */
   video?: string;
   desc?: string;
@@ -137,19 +139,19 @@ export const tools = [
 ]
 
 export const work: MediaItem[] = [
-  { src: work01, alt: "Travel campaign post — leave the stress behind", height: 709 },
-  { src: work02, alt: "School campaign post — hands that build, minds that imagine", height: 509 },
-  { src: work03, alt: "Raksha Bandhan courier campaign carousel", height: 709 },
-  { src: work04, alt: "Mango menu launch food styling post", height: 600 },
-  { src: work05, alt: "Friendship Day café campaign post", height: 510 },
-  { src: work06, alt: "Passionfruit Picante cocktail post", height: 410 },
-  // { src: work07, alt: "Beat the heat sofa campaign post", height: 414 },
-  { src: work08, alt: "Furniture discovery cycle post", height: 414 },
+  { src: work01, alt: "Addressing everyday office burnout to inspire working professionals to take a well-deserved break and unwind on a stress-free journey.", desc: "", height: 609 },
+  { src: work02, alt: "School campaign post — hands that build, minds that imagine", desc: "A student-centric creative highlighting hands-on, fun learning to build trust with parents.", height: 509 },
+  { src: work03, alt: "Festive post", desc: "An emotional festive post promoting a free Rakhi delivery offer", height: 550 },
+  { src: work04, alt: "New menu launch food styling post", desc: "A craving-focused food visual designed to trigger instant cravings. ", height: 600 },
+  { src: work05, alt: "Occasion Based post", desc: "Occasion-led creative showcasing candid hangout moments with sweet treats to position the cafe as the go-to spot for friendly reunions.", height: 510 },
+  { src: work06, alt: "Passionfruit Picante cocktail post", desc:"A craving-focused beverage visual designed to trigger drink cravings.", height: 510 },
+  { src: work08, alt: "Meme-inspired post", desc: "A meme-inspired consumer loop creative capturing the instant obsession and buying cycle of statement accent chairs.", height: 414 },
+  { src: work10, alt: "Craving-focused food post", desc: "A craving-focused food visual designed to trigger instant cravings. ", height: 514 },
+  { src: work11, alt: "Health-awareness post", desc: "A health-awareness creative addressing joint and back pain to drive clinical appointments. ", height: 600 },
+  { src: work12, alt: "What We Offer post", desc: "A student-centric creative highlighting hands-on, fun learning to build trust with parents.", height: 509 },
+  { src: work13, alt: "Blended with Love", desc:"A craving-focused beverage visual designed to trigger drink cravings.", height: 550 },
   // { src: work09, alt: "Furniture that's out of this world post 00", height: 414 },
-  { src: work10, alt: "Furniture that's out of this world post 1", height: 414 },
-  { src: work11, alt: "Furniture that's out of this world post 2", height: 600 },
-  { src: work12, alt: "Furniture that's out of this world post 30", height: 509 },
-  { src: work13, alt: "Blended with Love", height: 500 },
+  // { src: work07, alt: "Beat the heat sofa campaign post", height: 414 },
 ];
 
 export const projects: PortfolioCardData[] = [
@@ -246,12 +248,12 @@ export const projects: PortfolioCardData[] = [
 ];
 
 export const gridPlannings: MediaItem[] = [
-  { src: grid01, alt: "Feed grid planning for a restaurant brand" },
-  { src: grid03, alt: "Feed grid planning for a beverage and café brand" },
-  { src: grid06, alt: "Feed grid planning for a technology brand" },
-  { src: grid04, alt: "Feed grid planning for a fitness brand" },
-  { src: grid05, alt: "Feed grid planning for a fashion brand" },
-  { src: grid02, alt: "Feed grid planning for a luxury accessories brand" },
+  { src: grid01, alt: " Grid planning for a restaurant brand", width: 390, height: 526 },
+  { src: grid03, alt: " Grid planning for a restaurant brand", width: 391, height: 526 },
+  { src: grid06, alt: " Grid planning for a Cafe", width: 2421, height: 4310 },
+  { src: grid04, alt: " Grid planning for a Hospital", width: 1179, height: 1568 },
+  { src: grid05, alt: " Grid planning for a Villa", width: 1179, height: 1576 },
+  { src: grid02, alt: " Grid strategy for a bag brand", width: 391, height: 526 },
 ];
 
 export const reels: MediaItem[] = [
@@ -268,28 +270,28 @@ export const reels: MediaItem[] = [
 
 export const workCarousel: PortfolioCardData[][] = [
   [
-    { id:'bottegaa-1', title: "Bottegaa Posts", url: workCarousel2, type: "Video" },
-    { id:'bottegaa-2', title: "Bottegaa Posts", url: workCarousel16, type: "Video" },
-    { id:'bottegaa-3', title: "Bottegaa Posts", url: workCarousel3, type: "Video" },
-    { id:'bottegaa-4', title: "Bottegaa Posts", url: workCarousel4, type: "Video" },
-    { id:'bottegaa-5', title: "Bottegaa Posts", url: workCarousel1, type: "Image" },
+    { id:'bottegaa-1', title: "Bottegaa Posts", url: workCarousel2, type: "Video", description:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe." },
+    { id:'bottegaa-2', title: "Bottegaa Posts", url: workCarousel16, type: "Video", description:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
+    { id:'bottegaa-3', title: "Bottegaa Posts", url: workCarousel3, type: "Video", description:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
+    { id:'bottegaa-4', title: "Bottegaa Posts", url: workCarousel4, type: "Video", description:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
+    { id:'bottegaa-5', title: "Bottegaa Posts", url: workCarousel1, type: "Image", description:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
   ],
   [
-    { id:'GG-1', title: "GG Posts", url: workCarousel5, type: "Image" },
-    { id:'GG-2', title: "GG Posts", url: workCarousel6, type: "Image" },
-    { id:'GG-3', title: "GG Posts", url: workCarousel7, type: "Image" },
-    { id:'GG-4', title: "GG Posts", url: workCarousel8, type: "Image" },
+    { id:'GG-1', title: "GG Posts", url: workCarousel5, type: "Image", description: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
+    { id:'GG-2', title: "GG Posts", url: workCarousel6, type: "Image", description: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
+    { id:'GG-3', title: "GG Posts", url: workCarousel7, type: "Image", description: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
+    { id:'GG-4', title: "GG Posts", url: workCarousel8, type: "Image", description: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
   ],
   [
-    { id:'GG-5', title: "GG Posts", url: workCarousel9, type: "Video" },
-    { id:'GG-6', title: "GG Posts", url: workCarousel10, type: "Video" },
-    { id:'GG-7', title: "GG Posts", url: workCarousel11, type: "Video" },
-    { id:'GG-8', title: "GG Posts", url: workCarousel12, type: "Video" },
+    { id:'GG-5', title: "GG Posts", url: workCarousel9, type: "Video", description:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
+    { id:'GG-6', title: "GG Posts", url: workCarousel10, type: "Video", description:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
+    { id:'GG-7', title: "GG Posts", url: workCarousel11, type: "Video", description:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
+    { id:'GG-8', title: "GG Posts", url: workCarousel12, type: "Video", description:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
   ],
   [
-    { id:'Amary-1', title: "Amary Posts", url: workCarousel13, type: "Video" },
-    { id:'Amary-2', title: "Amary Posts", url: workCarousel14, type: "Video" },
-    { id:'Amary-3', title: "Amary Posts", url: workCarousel15, type: "Video" },
+    { id:'Amary-1', title: "Amary Posts", url: workCarousel13, type: "Video", description: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
+    { id:'Amary-2', title: "Amary Posts", url: workCarousel14, type: "Video", description: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
+    { id:'Amary-3', title: "Amary Posts", url: workCarousel15, type: "Video", description: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
   ],
 ];
 

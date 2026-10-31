@@ -93,6 +93,7 @@ import { PortfolioCardData } from "@/components/ui/Carousel/PortfolioCard";
 
 export const heroTextureUrl = heroTexture;
 export type MediaItem = {
+  id?: number;
   src: string;
   alt: string;
   height?: number;
@@ -136,6 +137,11 @@ export const tools = [
   "Canva",
   "Edits app",
   "VN",
+  "Meta Business Suite",
+  "Google workspace",
+  "Meta Ad Library",
+  "Google Trends",
+  "Instagram Native Insights"
 ]
 
 export const work: MediaItem[] = [
@@ -248,12 +254,12 @@ export const projects: PortfolioCardData[] = [
 ];
 
 export const gridPlannings: MediaItem[] = [
-  { src: grid01, alt: " Grid planning for a restaurant brand", width: 390, height: 526 },
-  { src: grid03, alt: " Grid planning for a restaurant brand", width: 391, height: 526 },
-  { src: grid06, alt: " Grid planning for a Cafe", width: 2421, height: 4310 },
-  { src: grid04, alt: " Grid planning for a Hospital", width: 1179, height: 1568 },
-  { src: grid05, alt: " Grid planning for a Villa", width: 1179, height: 1576 },
-  { src: grid02, alt: " Grid strategy for a bag brand", width: 391, height: 526 },
+  { id: 1, src: grid01, alt: " Grid planning for a restaurant brand", width: 390, height: 526 },
+  { id: 2,src: grid03, alt: " Grid planning for a restaurant brand", width: 391, height: 526 },
+  { id: 3,src: grid06, alt: " Grid planning for a Cafe", width: 2421, height: 4310 },
+  { id: 4,src: grid04, alt: " Grid planning for Hospital", width: 1179, height: 1568 },
+  { id: 5,src: grid05, alt: " Grid planning for a Villa", width: 1179, height: 1576 },
+  { id: 6,src: grid02, alt: " Grid strategy for a bag brand", width: 391, height: 526 },
 ];
 
 export const reels: MediaItem[] = [
@@ -270,28 +276,28 @@ export const reels: MediaItem[] = [
 
 export const workCarousel: PortfolioCardData[][] = [
   [
-    { id:'bottegaa-1', title: "Bottegaa Posts", url: workCarousel2, type: "Video", description:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe." },
-    { id:'bottegaa-2', title: "Bottegaa Posts", url: workCarousel16, type: "Video", description:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
-    { id:'bottegaa-3', title: "Bottegaa Posts", url: workCarousel3, type: "Video", description:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
-    { id:'bottegaa-4', title: "Bottegaa Posts", url: workCarousel4, type: "Video", description:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
-    { id:'bottegaa-5', title: "Bottegaa Posts", url: workCarousel1, type: "Image", description:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
+    { id:'bottegaa-1', url: workCarousel2, type: "Video", title:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe." },
+    { id:'bottegaa-2', url: workCarousel16, type: "Video", title:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
+    { id:'bottegaa-3', url: workCarousel3, type: "Video", title:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
+    { id:'bottegaa-4', url: workCarousel4, type: "Video", title:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
+    { id:'bottegaa-5', url: workCarousel1, type: "Image", title:"A storytelling carousel capturing comfort food and slow moments to showcase the cafe's warm, everyday dining vibe."  },
   ],
   [
-    { id:'GG-1', title: "GG Posts", url: workCarousel5, type: "Image", description: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
-    { id:'GG-2', title: "GG Posts", url: workCarousel6, type: "Image", description: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
-    { id:'GG-3', title: "GG Posts", url: workCarousel7, type: "Image", description: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
-    { id:'GG-4', title: "GG Posts", url: workCarousel8, type: "Image", description: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
+    { id:'GG-1', url: workCarousel5, type: "Image", title: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
+    { id:'GG-2', url: workCarousel6, type: "Image", title: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
+    { id:'GG-3', url: workCarousel7, type: "Image", title: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
+    { id:'GG-4', url: workCarousel8, type: "Image", title: "A sequential hook carousel capturing the cozy cafe vibes to invite guests to relax, unwind, and dine in." },
   ],
   [
-    { id:'GG-5', title: "GG Posts", url: workCarousel9, type: "Video", description:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
-    { id:'GG-6', title: "GG Posts", url: workCarousel10, type: "Video", description:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
-    { id:'GG-7', title: "GG Posts", url: workCarousel11, type: "Video", description:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
-    { id:'GG-8', title: "GG Posts", url: workCarousel12, type: "Video", description:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
+    { id:'GG-5', url: workCarousel9, type: "Video", title:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
+    { id:'GG-6', url: workCarousel10, type: "Video", title:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
+    { id:'GG-7', url: workCarousel11, type: "Video", title:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
+    { id:'GG-8', url: workCarousel12, type: "Video", title:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
   ],
   [
-    { id:'Amary-1', title: "Amary Posts", url: workCarousel13, type: "Video", description: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
-    { id:'Amary-2', title: "Amary Posts", url: workCarousel14, type: "Video", description: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
-    { id:'Amary-3', title: "Amary Posts", url: workCarousel15, type: "Video", description: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
+    { id:'Amary-1', url: workCarousel13, type: "Video", title: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
+    { id:'Amary-2', url: workCarousel14, type: "Video", title: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
+    { id:'Amary-3', url: workCarousel15, type: "Video", title: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
   ],
 ];
 

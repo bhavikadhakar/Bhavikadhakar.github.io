@@ -546,7 +546,7 @@ const Masonry: React.FC<MasonryProps> = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full"
+      className="relative w-full h-full max-sm:flex max-sm:justify-center"
       style={{
         height: gridHeight || undefined,
       }}
@@ -556,7 +556,7 @@ const Masonry: React.FC<MasonryProps> = ({
           key={item.alt}
           data-view-cursor="View"
           data-key={item.alt}
-          className="absolute box-content"
+          className={`absolute box-content max-sm:aspect-3/4 max-sm:w-fit!`}
           style={{
             willChange:
               "transform, width, height, opacity",

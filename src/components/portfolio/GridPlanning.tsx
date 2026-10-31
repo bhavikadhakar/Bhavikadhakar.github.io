@@ -24,14 +24,14 @@ export function GridPlanning() {
         <div className="mt-16 grid gap-14 md:mt-28 md:grid-cols-3 md:gap-8">
           <div className="flex flex-col gap-14">
             {gridPlanningsLeftSection.map((item, i) => (
-              <Reveal key={item.src} delay={120 + i * 90}>
+              <Reveal key={item.id} delay={120 + i * 90}>
                 <figure
                   data-view-cursor="View"
                   className="media group focus-within:outline-burgundy focus-within:outline-2 focus-within:outline-offset-3"
                 >
                   <button
                     type="button"
-                    onClick={() => lightbox.open(i)}
+                    onClick={() => lightbox.open((item.id || i) - 1)}
                     aria-label={`Open larger view — ${item.alt}`}
                     className="block w-full cursor-pointer overflow-hidden focus:outline-none"
                   >
@@ -46,7 +46,7 @@ export function GridPlanning() {
                     />
                   </button>
                   <figcaption className="label text-muted-foreground mt-4 text-[10px]">
-                    {String(i + 1).padStart(2, "0")} / Feed planning
+                    {String((item.id || i) + 1).padStart(2, "0")} / Feed planning
                   </figcaption>
                 </figure>
               </Reveal>
@@ -61,7 +61,7 @@ export function GridPlanning() {
                 >
                   <button
                     type="button"
-                    onClick={() => lightbox.open(i)}
+                    onClick={() => lightbox.open((item.id || i) - 1)}
                     aria-label={`Open larger view — ${item.alt}`}
                     className="block w-full cursor-pointer overflow-hidden focus:outline-none"
                   >
@@ -76,7 +76,7 @@ export function GridPlanning() {
                     />
                   </button>
                   <figcaption className="label text-muted-foreground mt-4 text-[10px]">
-                    {String(i + 1).padStart(2, "0")} / Feed planning
+                    {String((item.id || i) + 1).padStart(2, "0")} / Feed planning
                   </figcaption>
                 </figure>
               </Reveal>
@@ -91,7 +91,7 @@ export function GridPlanning() {
                 >
                   <button
                     type="button"
-                    onClick={() => lightbox.open(i)}
+                    onClick={() => lightbox.open((item.id || i) - 1)}
                     aria-label={`Open larger view — ${item.alt}`}
                     className="block w-full cursor-pointer overflow-hidden focus:outline-none"
                   >
@@ -106,7 +106,7 @@ export function GridPlanning() {
                     />
                   </button>
                   <figcaption className="label text-muted-foreground mt-4 text-[10px]">
-                    {String(i + 1).padStart(2, "0")} / Feed planning
+                    {String((item.id || i) + 1).padStart(2, "0")} / Feed planning
                   </figcaption>
                 </figure>
               </Reveal>

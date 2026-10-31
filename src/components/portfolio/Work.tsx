@@ -40,11 +40,11 @@ const transformPostsToProjects: any =  workCarousel.flat().map((reel) => ({
           >
             <CarouselContent>
               {workCarousel?.[0]?.map((post, index) => (
-                <CarouselItem key={index}>
+                <CarouselItem key={post.id}>
                   <div className="p-1">
                     <Card>
                       <CardContent className="flex aspect-4/5 items-center justify-center p-0">
-                        <WorkCarouselCard project={post} active={true} index={index} lightbox={lightbox} />
+                        <WorkCarouselCard project={post} active={true} index={parseInt(`000${index}`)} lightbox={lightbox} />
                       </CardContent>
                     </Card>
                   </div>
@@ -62,11 +62,11 @@ const transformPostsToProjects: any =  workCarousel.flat().map((reel) => ({
           >
             <CarouselContent>
               {workCarousel?.[1]?.map((post, index) => (
-                <CarouselItem key={index}>
+                <CarouselItem key={post.id}>
                   <div className="p-1">
                     <Card>
                       <CardContent className="flex aspect-4/5 items-center justify-center p-0">
-                        <WorkCarouselCard project={post} index={index} lightbox={lightbox} />
+                        <WorkCarouselCard project={post} index={parseInt(`001${index}`)} lightbox={lightbox} />
                       </CardContent>
                     </Card>
                   </div>
@@ -84,11 +84,11 @@ const transformPostsToProjects: any =  workCarousel.flat().map((reel) => ({
           >
             <CarouselContent>
               {workCarousel?.[2]?.map((post, index) => (
-                <CarouselItem key={index}>
+                <CarouselItem key={post.id}>
                   <div className="p-1">
                     <Card>
                       <CardContent className="flex aspect-4/5 items-center justify-center p-0">
-                        <WorkCarouselCard project={post} index={index} lightbox={lightbox} />
+                        <WorkCarouselCard project={post} index={parseInt(`002${index}`)} lightbox={lightbox} />
                       </CardContent>
                     </Card>
                   </div>
@@ -106,11 +106,11 @@ const transformPostsToProjects: any =  workCarousel.flat().map((reel) => ({
           >
             <CarouselContent>
               {workCarousel?.[3]?.map((post, index) => (
-                <CarouselItem key={index}>
+                <CarouselItem key={post.id}>
                   <div className="p-0">
                     <Card>
                       <CardContent className="flex aspect-4/5 items-center justify-center p-0">
-                        <WorkCarouselCard project={post} index={index} lightbox={lightbox} />
+                        <WorkCarouselCard project={post} index={parseInt(`003${index}`)} lightbox={lightbox} />
                       </CardContent>
                     </Card>
                   </div>

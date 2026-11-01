@@ -94,6 +94,7 @@ import { PortfolioCardData } from "@/components/ui/Carousel/PortfolioCard";
 export const heroTextureUrl = heroTexture;
 export type MediaItem = {
   id?: number;
+  aspectRatio?: string;
   src: string;
   alt: string;
   height?: number;
@@ -151,7 +152,7 @@ export const work: MediaItem[] = [
   { src: work04, alt: "New menu launch food styling post", desc: "A craving-focused food visual designed to trigger instant cravings. ", height: 600 },
   { src: work05, alt: "Occasion Based post", desc: "Occasion-led creative showcasing candid hangout moments with sweet treats to position the cafe as the go-to spot for friendly reunions.", height: 510 },
   { src: work06, alt: "Passionfruit Picante cocktail post", desc:"A craving-focused beverage visual designed to trigger drink cravings.", height: 510 },
-  { src: work08, alt: "Meme-inspired post", desc: "A meme-inspired consumer loop creative capturing the instant obsession and buying cycle of statement accent chairs.", height: 414 },
+  { src: work08, aspectRatio:"square", alt: "Meme-inspired post", desc: "A meme-inspired consumer loop creative capturing the instant obsession and buying cycle of statement accent chairs.", height: 414 },
   { src: work10, alt: "Craving-focused food post", desc: "A craving-focused food visual designed to trigger instant cravings. ", height: 514 },
   { src: work11, alt: "Health-awareness post", desc: "A health-awareness creative addressing joint and back pain to drive clinical appointments. ", height: 600 },
   { src: work12, alt: "What We Offer post", desc: "A student-centric creative highlighting hands-on, fun learning to build trust with parents.", height: 509 },

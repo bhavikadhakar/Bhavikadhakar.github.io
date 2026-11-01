@@ -89,6 +89,7 @@ interface Item {
   src: string;
   alt: string;
   height: number;
+  aspectRatio?: string;
 }
 
 interface GridItem extends Item {
@@ -556,7 +557,7 @@ const Masonry: React.FC<MasonryProps> = ({
           key={item.alt}
           data-view-cursor="View"
           data-key={item.alt}
-          className={`absolute box-content max-sm:aspect-3/4 max-sm:w-fit!`}
+          className={`absolute box-content max-sm:aspect-${item.aspectRatio || '3/4'} max-sm:w-fit!`}
           style={{
             willChange:
               "transform, width, height, opacity",

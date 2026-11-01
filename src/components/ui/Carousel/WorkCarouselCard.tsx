@@ -186,7 +186,7 @@ export function WorkCarouselCard({
 
           <button
             type="button"
-            className="portfolio-card-icon"
+            className={`portfolio-card-icon ${index}`}
             onClick={() => lightbox.open(index)}
             aria-label={`View ${project?.title}`}
           >

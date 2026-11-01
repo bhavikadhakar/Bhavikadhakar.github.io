@@ -24,6 +24,7 @@ type CarouselContextProps = {
   scrollNext: () => void;
   canScrollPrev: boolean;
   canScrollNext: boolean;
+  selectedIndex: number;
 } & CarouselProps;
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
@@ -49,6 +50,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -57,6 +59,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
 
       setCanScrollPrev(api.canScrollPrev());
       setCanScrollNext(api.canScrollNext());
+      setSelectedIndex(api.selectedScrollSnap());
     }, []);
 
     const scrollPrev = React.useCallback(() => {
@@ -113,6 +116,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          selectedIndex
         }}
       >
         <div
@@ -136,7 +140,7 @@ const CarouselContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HT
     const { carouselRef, orientation } = useCarousel();
 
     return (
-      <div ref={carouselRef} className="overflow-hidden">
+      <div ref={carouselRef} className="overflow-hidden rounded-xl! m-1">
         <div
           ref={ref}
           className={cn("flex", orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col", className)}
@@ -221,4 +225,34 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 );
 CarouselNext.displayName = "CarouselNext";
 
-export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext };
+const CarouselDots = ({
+  className,
+}: React.HTMLAttributes<HTMLDivElement>) => {
+  const { api, selectedIndex } = useCarousel();
+
+  if (!api) return null;
+
+  return (
+    <div className={cn("flex items-center justify-center gap-2", className)}>
+      {api.scrollSnapList().map((_, index) => (
+        <button
+          key={index}
+          type="button"
+          onClick={() => api.scrollTo(index)}
+          aria-label={`Go to slide ${index + 1}`}
+          aria-current={selectedIndex === index ? "true" : undefined}
+          className={cn(
+            "h-2 rounded-full transition-all duration-300",
+            selectedIndex === index
+              ? "w-6 bg-primary"
+              : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60",
+          )}
+        />
+      ))}
+    </div>
+  );
+};
+
+CarouselDots.displayName = "CarouselDots";
+
+export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, CarouselDots };

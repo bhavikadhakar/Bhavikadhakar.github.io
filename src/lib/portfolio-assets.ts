@@ -296,8 +296,8 @@ export const workCarousel: PortfolioCardData[][] = [
     { id:'GG-8', url: workCarousel12, type: "Video", title:"A sensory, craving-led storytelling post using close-up pours and slow bites to turn the brand's pancakes into an irresistible must-try dessert." },
   ],
   [
-    { id:'Amary-1', url: workCarousel13, type: "Video", title: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
     { id:'Amary-2', url: workCarousel14, type: "Video", title: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
+    { id:'Amary-1', url: workCarousel13, type: "Video", title: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
     { id:'Amary-3', url: workCarousel15, type: "Video", title: "A carousel post showing that true skin health happens both from the inside and outside, positioning the serum as the core daily essential." },
   ],
 ];

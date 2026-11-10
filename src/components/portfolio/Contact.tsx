@@ -55,7 +55,7 @@ export function Contact() {
             <br />
             Social Media Manager
             <br />
-            2026
+            {/* 2026 */}
           </p>
         </Reveal>
       </div>

@@ -305,7 +305,7 @@ export const workCarousel: PortfolioCardData[][] = [
 
 export const logo = [
   { src: logo1, alt: "Company 1" },
-  { src: logo2, alt: "Company 1" },
+  { src: logo2, alt: "Company 2" },
   { src: logo3, alt: "Company 1" },
   { src: logo4, alt: "Company 1" },
   { src: logo5, alt: "Company 1" },

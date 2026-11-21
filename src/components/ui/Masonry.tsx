@@ -128,21 +128,27 @@ const Masonry: React.FC<MasonryProps> = ({
   blurToFocus = true,
   colorShiftOnHover = false,
 }) => {
-  const columns = useMedia(
-    [
-      "(min-width:1500px)",
-      "(min-width:1000px)",
-      "(min-width:600px)",
-      "(min-width:400px)",
-    ],
-    [5, 4, 3, 2],
-    1
-  );
+
+  
 
   const lightbox = useLightbox();
 
   const [containerRef, { width }] =
-    useMeasure<HTMLDivElement>();
+  useMeasure<HTMLDivElement>();
+
+  const GAP = 16;
+  const MIN_COLUMN_WIDTH = 220;
+  const MAX_COLUMNS = 5;
+
+  const columns = useMemo(() => {
+    if (!width) return 1;
+
+    const calculatedColumns = Math.floor(
+      (width + GAP) / (MIN_COLUMN_WIDTH + GAP)
+    );
+
+    return Math.min(MAX_COLUMNS, Math.max(1, calculatedColumns));
+  }, [width]);
 
   const [imagesReady, setImagesReady] = useState(false);
 
@@ -308,10 +314,7 @@ const Masonry: React.FC<MasonryProps> = ({
 
     const colHeights = new Array(columns).fill(0);
 
-    const gap = 16;
-
-    const totalGaps =
-      (columns - 1) * gap;
+    const totalGaps = (columns - 1) * GAP;
 
     const columnWidth =
       (width - totalGaps) / columns;
@@ -321,14 +324,19 @@ const Masonry: React.FC<MasonryProps> = ({
         Math.min(...colHeights)
       );
 
-      const x =
-        col * (columnWidth + gap);
+      const x = col * (columnWidth + GAP);
 
-      const height = child.height / 2;
+      const aspectRatio = child.aspectRatio
+        ? child.aspectRatio.split("/").map(Number)
+        : null;
 
+      const height = aspectRatio?.length === 2
+        ? columnWidth / (aspectRatio[0] / aspectRatio[1])
+        : child.height / 2;
+        
       const y = colHeights[col];
 
-      colHeights[col] += height + gap;
+      colHeights[col] += height + GAP;
 
       return {
         ...child,
@@ -547,7 +555,7 @@ const Masonry: React.FC<MasonryProps> = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full max-sm:flex max-sm:justify-center"
+      className="relative w-full"
       style={{
         height: gridHeight || undefined,
       }}
@@ -557,26 +565,16 @@ const Masonry: React.FC<MasonryProps> = ({
           key={item.alt}
           data-view-cursor="View"
           data-key={item.alt}
-          className={`absolute box-content max-sm:aspect-${item.aspectRatio || '3/4'} max-sm:w-fit!`}
-          style={{
-            willChange:
-              "transform, width, height, opacity",
-          }}
-          onClick={() =>
-            lightbox.open(i)
+          className="absolute box-content max-sm:w-fit! max-sm:aspect-(--mobile-aspect)"
+          style={
+            {
+              willChange: "transform, width, height, opacity",
+              "--mobile-aspect": item.aspectRatio || "3 / 4",
+            } as React.CSSProperties
           }
-          onMouseEnter={(e) =>
-            handleMouseEnter(
-              item.alt,
-              e.currentTarget
-            )
-          }
-          onMouseLeave={(e) =>
-            handleMouseLeave(
-              item.alt,
-              e.currentTarget
-            )
-          }
+          onClick={() => lightbox.open(i)}
+          onMouseEnter={(e) => handleMouseEnter(item.alt, e.currentTarget)}
+          onMouseLeave={(e) => handleMouseLeave(item.alt, e.currentTarget)}
         >
           <div
             className="relative w-full h-full bg-cover bg-center rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] uppercase text-[10px] leading-2.5"
@@ -591,11 +589,7 @@ const Masonry: React.FC<MasonryProps> = ({
         </div>
       ))}
 
-      <Lightbox
-        items={grid}
-        kind="Selected work"
-        state={lightbox}
-      />
+      <Lightbox items={grid} kind="Selected work" state={lightbox} />
     </div>
   );
 };
